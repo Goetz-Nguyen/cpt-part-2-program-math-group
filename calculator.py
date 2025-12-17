@@ -1,4 +1,3 @@
-import math
 import questionary
 from sympy import sympify
 
@@ -12,35 +11,30 @@ class Calculation_history:
         spot_history = 1
 
         for equation in self._history:
-            print(f"{spot_history}. | {equation} |")
+            print(f"{spot_history}. {equation}")
             spot_history += 1
 
     def output_history_file(self) -> None:
         with open("Calculator history.txt", "w") as file:
-            for data in self._history:
-                file.write(data)
-
-
+            pass
 
 def menu() -> None:
+    while True:
+        option = questionary.select(
+            "-----------------------------------------------------\n",
+            choices= ["{ 1. Calculate }", "{ 2. Get calculator history }", "{ 3. Clear calculator history file }", "------------------------------------------------------"]
+        ).ask()
+        match option:
+            case "{ 1. Calculate }":
+                calculate(history)
 
-    option = questionary.select(
-        "-----------------------------------------------------\n",
-        choices= ["{ 1. Calculate }", "{ 2. Get calculator history }", "{ 3. Output calculator history as a '.txt' file } \n ------------------------------------------------------"]
-    ).ask()
+            case "{ 2. Get calculator history }":
+                show_history = Calculation_history(history)
+                show_history.get_history()
 
-    if option == "{ 1. Calculate }":
-        calculate(history)
-
-    elif option == "{ 2. Get calculator history }":
-        show_history = Calculation_history(history)
-        show_history.get_history()
-        menu()
-
-    elif option == "{ 3. Output calculator history as a '.txt' file }":
-        output_history = Calculation_history(history)
-        output_history.output_history_file()
-        menu()
+            case "{ 3. Clear calculator history file }":
+                output_history = Calculation_history(history)
+                output_history.output_history_file()
 
 
 def test_calculate() -> bool:
@@ -59,9 +53,13 @@ def calculate(history: list[str]) -> None:
             if test_calculate() == True:
                 #use alt to evaluate expression
                 result = sympify(equation)
-                result_text = f"{equation} = {result}"
-                print("|", result_text,"|")
+                result_text = f"| {equation} = {result} |"
+                print(result_text)
+
                 history.append(result_text)
+
+                with open("Calculator history.txt", "a+") as file:
+                    file.writelines(result_text + "\n")
 
                 next_option = questionary.select(
                 "Would you like to input a calculation again?",
@@ -74,18 +72,11 @@ def calculate(history: list[str]) -> None:
                 elif next_option == "{ 2. Go back to menu }":
                     break
 
-        menu()
-
     elif option == "{ 2. Go back to menu }":   
-        menu()
-    
-       
-                   
+        return None
+                     
 def main():
-    #make a quick claculation, so basically if you want to quick calculate, manually see history and calculate or polymorphism
-    #then create objects here, but if you want menu for interactive history and new calculation, then put menu function
-    #basically, quick calcluate is for calculate function and get history/and get equation and __str__ method
-    # /normal is the menu function which gets new equation or get history or output history as  file
+
     menu()
 
 if __name__ == "__main__":
