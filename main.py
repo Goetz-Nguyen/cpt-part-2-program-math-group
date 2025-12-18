@@ -663,7 +663,7 @@ def simple_calculator():
         os.system('cls' if os.name == 'nt' else 'clear')
         if option == "{ 1. Yes }":
             while True:
-                equation = str(input("Equation(use: '+' '-' '/' '*' '**' 'sqrt()'): "))
+                equation = str(input("Equation(use: '+' '-' '/' '*' '**' 'sqrt(x)'): "))
                 #if not true retry
                 if test_calculate() == True:
                     #use alt to evaluate expression
