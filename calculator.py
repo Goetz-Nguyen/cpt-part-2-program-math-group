@@ -1,5 +1,25 @@
-import questionary
+from InquirerPy import prompt
 from sympy import sympify
+import os
+
+def promptinput(message,choices):
+    """Creates a prompt of choices
+
+    Args:
+        message(str): Message to ask
+        choices(list): Choices to make
+    Return:
+        (str): Choice made by user
+    """
+    user_input = [
+        {
+            "type": "list",
+            "message": message,
+            "choices": choices
+        }
+    ] 
+    return prompt(user_input)[0] # Return chosen answer
+
 
 history = []
 
@@ -20,32 +40,36 @@ class Calculation_history:
 
 def menu() -> None:
     while True:
-        option = questionary.select(
-            "-----------------------------------------------------\n",
-            choices= ["{ 1. Calculate }", "{ 2. Get calculator history }", "{ 3. Clear calculator history file }", "------------------------------------------------------"]
-        ).ask()
+        option = promptinput(
+            "-----------------------------------------------------",
+            ["{ 1. Calculate }", "{ 2. Get calculator history }", "{ 3. Clear calculator history file }", "{ 4. Exit }"])
         match option:
             case "{ 1. Calculate }":
+                os.system('cls' if os.name == 'nt' else 'clear')
                 calculate(history)
 
             case "{ 2. Get calculator history }":
+                os.system('cls' if os.name == 'nt' else 'clear')
                 show_history = Calculation_history(history)
                 show_history.get_history()
 
             case "{ 3. Clear calculator history file }":
+                os.system('cls' if os.name == 'nt' else 'clear')
                 output_history = Calculation_history(history)
                 output_history.output_history_file()
+
+            case "{ 4. Exit }":
+                return
 
 
 def test_calculate() -> bool:
     return True
     
 def calculate(history: list[str]) -> None:
-    option = questionary.select(
+    option = promptinput(
         "Would you like to input a calculation/calculations",
-        choices= ["{ 1. Yes }", "{ 2. Go back to menu }"]
-    ).ask()
-
+        ["{ 1. Yes }", "{ 2. Go back to menu }"])
+    os.system('cls' if os.name == 'nt' else 'clear')
     if option == "{ 1. Yes }":
         while True:
             equation = str(input("Equation(use: '+' '-' '/' '*' '**' 'sqrt()'): "))
@@ -55,21 +79,16 @@ def calculate(history: list[str]) -> None:
                 result = sympify(equation)
                 result_text = f"| {equation} = {result} |"
                 print(result_text)
-
                 history.append(result_text)
 
                 with open("Calculator history.txt", "a+") as file:
                     file.writelines(result_text + "\n")
 
-                next_option = questionary.select(
+                next_option = promptinput(
                 "Would you like to input a calculation again?",
-                choices= ["{ 1. Yes }", "{ 2. Go back to menu }"]
-                ).ask()
-
-                if next_option == "{ 1. Yes }":
-                    print("")
-                
-                elif next_option == "{ 2. Go back to menu }":
+                choices= ["{ 1. Yes }", "{ 2. Go back to menu }"])
+                os.system('cls' if os.name == 'nt' else 'clear')
+                if next_option == "{ 2. Go back to menu }":
                     break
 
     elif option == "{ 2. Go back to menu }":   
