@@ -1,4 +1,5 @@
 import sympy, random, os
+from sympy import sympify
 from InquirerPy import prompt
 from PyDesmos import Graph
 
@@ -610,10 +611,86 @@ def mental_math():
                             print(f"Score: {corrects}/{tries}")
                             choice = menu()
 
+def simple_calculator():
+    history = []
+
+    class Calculation_history:
+        def __init__(self, history: list[str]):
+            self._history = history
+        
+        def get_history(self) -> None:
+            spot_history = 1
+
+            for equation in self._history:
+                print(f"{spot_history}. {equation}")
+                spot_history += 1
+
+        def output_history_file(self) -> None:
+            with open("Calculator history.txt", "w") as file:
+                pass
+
+    def menu() -> None:
+        while True:
+            option = promptinput(
+                "-----------------------------------------------------",
+                ["{ 1. Calculate }", "{ 2. Get calculator history }", "{ 3. Clear calculator history file }", "{ 4. Exit }"])
+            match option:
+                case "{ 1. Calculate }":
+                    os.system('cls' if os.name == 'nt' else 'clear')
+                    calculate(history)
+
+                case "{ 2. Get calculator history }":
+                    os.system('cls' if os.name == 'nt' else 'clear')
+                    show_history = Calculation_history(history)
+                    show_history.get_history()
+
+                case "{ 3. Clear calculator history file }":
+                    os.system('cls' if os.name == 'nt' else 'clear')
+                    output_history = Calculation_history(history)
+                    output_history.output_history_file()
+
+                case "{ 4. Exit }":
+                    return
+
+
+    def test_calculate() -> bool:
+        return True
+        
+    def calculate(history: list[str]) -> None:
+        option = promptinput(
+            "Would you like to input a calculation/calculations",
+            ["{ 1. Yes }", "{ 2. Go back to menu }"])
+        os.system('cls' if os.name == 'nt' else 'clear')
+        if option == "{ 1. Yes }":
+            while True:
+                equation = str(input("Equation(use: '+' '-' '/' '*' '**' 'sqrt()'): "))
+                #if not true retry
+                if test_calculate() == True:
+                    #use alt to evaluate expression
+                    result = sympify(equation)
+                    result_text = f"| {equation} = {result} |"
+                    print(result_text)
+                    history.append(result_text)
+
+                    with open("Calculator history.txt", "a+") as file:
+                        file.writelines(result_text + "\n")
+
+                    next_option = promptinput(
+                    "Would you like to input a calculation again?",
+                    choices= ["{ 1. Yes }", "{ 2. Go back to menu }"])
+                    os.system('cls' if os.name == 'nt' else 'clear')
+                    if next_option == "{ 2. Go back to menu }":
+                        break
+
+        elif option == "{ 2. Go back to menu }":   
+            return None
+    
+    menu()
+
 def main():
     tests = {}
     menu_options = ["Create new test", "Load test from file", "Run a test",
-                     "Study Guides", "Graph Calculator", "Mental Math", "Exit"]
+                     "Study Guides", "Graph Calculator", "Mental Math", "Simple Calculator", "Exit"]
     choice = promptinput("What do you want?", menu_options)
     while choice != "Exit":
         os.system('cls' if os.name == 'nt' else 'clear')  # Clean terminal
@@ -650,6 +727,10 @@ def main():
 
             case "Mental Math":
                 mental_math()
+                choice = promptinput("What do you want?", menu_options)
+            
+            case "Simple Calculator":
+                simple_calculator()
                 choice = promptinput("What do you want?", menu_options)
 
     print("Bye!")
