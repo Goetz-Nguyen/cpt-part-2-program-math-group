@@ -25,10 +25,10 @@ class Rectangle:
         self._width = width
     def rectangle_perimeter(self):
         r_perimeter = 2 * (self._length + self._width)
-        print(r_perimeter)
+        print(f"The perimeter of the rectangle is {r_perimeter} units.")
     def rectangle_area(self):
         r_area = self._length * self._width
-        print(r_area)
+        print(f"The area pf the rectangle is {r_area} units.")
 
 
 class Square:
@@ -36,12 +36,10 @@ class Square:
         self._s = s
     def square_perimeter(self):
         sq_perimeter = 4 * self._s
-        print(sq_perimeter)
+        print(f"The perimeter of the square is {sq_perimeter} units.")
     def square_area(self):
         sq_area = self._s**2
-        print(sq_area)
-
-
+        print(f"The area of the square is {sq_area} units.")
 
 class Triangle:
     def __init__(self, a: int, b: int, c: int, base:int , height: int,):
@@ -52,10 +50,10 @@ class Triangle:
         self._height = height
     def triangle_perimeter(self):
         t_perimeter = self._a + self._b + self._c
-        print(t_perimeter)
+        print(f"The perimeter of the triangle is {t_perimeter} units")
     def triangle_area(self):
         t_area = (self._base * self._height) / 2
-        print(f"{t_area:.2f}")
+        print(f"The area of the triangle is {t_area:.2f} units")
 
 class Circle:
     def __init__(self, diameter: int, radius: int, circumference: int) -> None:
@@ -65,13 +63,13 @@ class Circle:
         self.pi = math.pi
     def diameter(self):
         cir_diameter = 2 * self._radius
-        print(f"{cir_diameter:.2f}")
+        print(f"The diameter of the circle is {cir_diameter:.2f} units.")
     def circumference(self):
         cir_circumference = 2 * self.pi * self._radius
-        print(f"{cir_circumference:.2f}")
+        print(f"The circumference of the circle is {cir_circumference:.2f} units.")
     def circle_area(self):
         cir_area = self.pi * self._radius**2
-        print(f"{cir_area:.2f}")
+        print(f"The area of the circle is {cir_area:.2f} units.")
 
 # 3D Shapes
 class Cube(Square):
@@ -79,20 +77,20 @@ class Cube(Square):
         super().__init__(s)
     def cube_volume(self):
         c_volume = self._s**3
-        print(c_volume)
+        print(f"The volume of the cube is {c_volume} units.")
     def cube_surface_area(self):
         c_surface_area = 6*self._s**2
-        print(c_surface_area)
+        print(f"The surface area of the cube is {c_surface_area} units.")
 class Rectangular_Prism(Rectangle):
     def __init__(self, length: int, width: int, height: int):
         super().__init__(length, width)
         self._height = height
     def rect_prism_volume(self):
         r_prism_volume = self._length * self._width * self._height
-        print(r_prism_volume)
+        print(f"The volume of the rectangular prism is {r_prism_volume} units.")
     def rect_prism_surface_area(self):
         r_prism_surface_area = 2*(self._length * self._width) + 2*(self._length * self._height) + 2*(self._width * self._height)
-        print(r_prism_surface_area)
+        print(f"The surface area of the rectangle is {r_prism_surface_area} units. ")
 
 
 print("------------------------------------------------------------")
@@ -115,20 +113,20 @@ class Circular_cylinder:
         self._height = height
     def cylinder_volume(self):
         cy_volume = math.pi * self._radius**2 * self._height
-        print(f"{cy_volume:.2f}")
+        print(f"The volume of the cylinder is {cy_volume:.2f} units.")
     def cylinder_surface_area(self):
         cy_surface_area = (2 *  math.pi * self._radius * self._height) + (2 * math.pi * self._radius**2)
-        print(f"{cy_surface_area:.2f}")
+        print(f"The surface area of the cylinder is {cy_surface_area:.2f} units.")
 
 class Cone(Circular_cylinder):
     def __init__(self, radius: int, height: int):
         super().__init__(radius, height)
     def cone_volume(self):
         cne_volume = math.pi * self._radius**2 * (self._height / 3)
-        print(f"{cne_volume:.2f}")
+        print(f"The volume of the cone is {cne_volume:.2f} units")
     def cone_surface_area(self):
         cne_surface_area = math.pi * self._radius * math.sqrt(self._height**2 + self._radius**2)
-        print(f"{cne_surface_area:.2f}")
+        print(f"The surface area of the cone is {cne_surface_area:.2f} units.")
 
 
 def main():
