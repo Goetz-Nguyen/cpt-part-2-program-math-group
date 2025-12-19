@@ -2,6 +2,24 @@ from InquirerPy import prompt
 from sympy import sympify
 import os
 
+
+# Trigonometric Functions: Sine, cosine, tangent, and their inverses for solving triangles and working with angles. 
+# 1
+# Logarithmic Functions: Natural logarithm (ln) and common logarithm (log) for working with exponential relationships and solving equations. 
+# 1
+# Exponential Functions: The exponential function (e^x) and its inverse for growth and decay problems. 
+# 1
+# Fractional Calculations: Performing operations with fractions, displaying results in either fractional or decimal form. 
+# 1
+# Scientific Notation: Working with very large or small numbers with scientific notation functionality. 
+# 1
+
+#percentage
+#inverse
+
+# Degrees, Radians, and Gradians: 
+
+
 def promptinput(message,choices):
     """Creates a prompt of choices
 
@@ -63,7 +81,7 @@ def menu() -> None:
 
 
 def test_calculate() -> bool:
-    return True
+    return True #test
     
 def calculate(history: list[str]) -> None:
     option = promptinput(
@@ -79,6 +97,7 @@ def calculate(history: list[str]) -> None:
                 result = sympify(equation)
                 result_text = f"| {equation} = {result} |"
                 print(result_text)
+
                 history.append(result_text)
 
                 with open("Calculator history.txt", "a+") as file:
