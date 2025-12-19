@@ -24,28 +24,38 @@ menu = promptinput("What kind of graph?",["Trig", "Polynomial", "Exit"])
 error = False
 while menu != "Exit":
     if menu == "Polynomial":
-        try:
-            coefficient = []
-            equation = ""
-            exponent = int(input("Enter graph degree: "))
-            for i in range(exponent+1):
-                coefficient.append(int(input(f"Enter coefficient of the the term with degree {i}: ")))
-            for i in range(len(coefficient), 0, -1):
-                if i != 0:
-                    equation += f"{coefficient[i-1]}*x^{i-1} + "
-            equation = equation[:len(equation)-3]
-            error = False
-        except:
-            error = True
-            print("Enter valid numbers!")
-        if not error:
+        menup = promptinput("How do you want to enter your graph?", ["Equation", "Enter each term"])
+        if menup == "Equation":
+            with Graph('my graph') as G:
+                f, x = G.f, G.x
+                try:
+                    print("Use ^ to show exponents")
+                    f[x] = input("f(x) = ")
+                except:
+                    print("Enter valid numbers!")
+        else:
             try:
-                with Graph('my graph') as G:
-                        f, x = G.f, G.x
-                        f[x] = equation
+                coefficient = []
+                equation = ""
+                exponent = int(input("Enter graph degree: "))
+                for i in range(exponent+1):
+                    coefficient.append(int(input(f"Enter coefficient of the the term with degree {i}: ")))
+                for i in range(len(coefficient), 0, -1):
+                    if i != 0:
+                        equation += f"{coefficient[i-1]}*x^{i-1} + "
+                equation = equation[:len(equation)-3]
+                error = False
             except:
-                print("Couldn't graph!")
-            menu = promptinput("What kind of graph?",["Trig", "Polynomial"])
+                error = True
+                print("Enter valid numbers!")
+            if not error:
+                try:
+                    with Graph('my graph') as G:
+                            f, x = G.f, G.x
+                            f[x] = equation
+                except:
+                    print("Couldn't graph!")
+        menu = promptinput("What kind of graph?",["Trig", "Polynomial"])
     else:
         trig_type = promptinput("Type of trig?",["Cos", "Sin", "Tan"])
         try:
@@ -74,5 +84,5 @@ while menu != "Exit":
                             f[x] = a*sympy.tan(k*(x-d))+c
             except:
                 print("Couldn't graph!")
-            menu = promptinput("What kind of graph?",["Trig", "Polynomial"])
+        menu = promptinput("What kind of graph?",["Trig", "Polynomial"])
 print("Bye!")
