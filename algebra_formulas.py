@@ -1,4 +1,5 @@
 import math
+from math import factorial
 from InquirerPy import prompt
 def promptinput(message,choices):
     """Creates a prompt of choices
@@ -29,9 +30,9 @@ class Quadratics:
             print("It has 0 solutions")
 
         elif discriminant == 0:
-            print("It has 1 solution")
+            print("It has 1 solution.")
         else:
-            print("It has 2 solutions")
+            print("It has 2 solutions.")
         
             quad_1 = ((-1 *self._b)+math.sqrt(discriminant))/(2*self._a)
             quad_2 = ((-1 * self._b)-math.sqrt(discriminant))/(2*self._a)
@@ -44,24 +45,34 @@ class Pythagorean:
         self._b = b
         self._c = c
     def pythagorean_theorem(self):
-        side = int(input("Which side to solve?: [a,b,c] "))
-        if side == side.lower("c"):
+        side = input("Which side to solve?: [a,b,c] ")
+        if side.lower() == "c":
             py_theorem = math.sqrt(self._a**2 + self._b**2)
-            print(f"The length of C is {py_theorem}")
-        elif side == side.lower("a"):
+            print(f"The length of C is {py_theorem:.2f}")
+        elif side.lower() == "a":
             py_theorem = math.sqrt(self._c**2 - self._b**2)
-            print(f"The length of A is {py_theorem}")
-        elif side == side.lower("b"):
+            print(f"The length of A is {py_theorem:.2f}")
+        elif side.lower() == "b":
             py_theorem = math.sqrt(self._c**2 - self._a**2)
-            print(f"The length of B is {py_theorem}")
-class Midpoint:
-    def __init__(self):
-        pass
-    
+            print(f"The length of B is {py_theorem:.2f}")
 
+class Pascals_Triangle:
+    def __init__(self, n: int):
+        self.n = n
+    def printing_triangle(self):
+        for i in range(self.n):
+            for j in range(self.n - i + 1):
+                print(end=" ")
+
+            for j in range(i+1):
+                print(factorial(i)//(factorial(j)*factorial(i-j)), end=" ")
+
+            # for new line
+            print()
+        
 
 def main():
-    algebralist = ["Quadratics", "Pythagorean", "Midpoint"]
+    algebralist = ["Quadratics", "Pythagorean", "Pascal's Triangle", "Exit"]
     menu = promptinput("Pick a formula: ", algebralist)
     match menu:
         case "Quadratics":
@@ -70,6 +81,25 @@ def main():
             except:
                 print("Enter a valid number.")
             variables.quadratic()
+            menu = promptinput("Pick a formula: ", algebralist)
+        case "Pythagorean":
+            try: 
+                sides = Pythagorean(int(input("Enter first number: ")), int(input("Enter second number: ")), int(input("Enter third number: ")))
+            except: 
+                print("Enter valid number.")
+            sides.pythagorean_theorem()
+            menu = promptinput("Pick a formula: ", algebralist)
+        case "Pascal's Triangle":
+            try:
+                n = Pascals_Triangle(int(input("Enter the value of N: ")))
+                n.printing_triangle()
+            except:
+                print("Enter a valid value for N.")
+            menu = promptinput("Pick a formula: ", algebralist)
+        case "Exit":
+            return
+                
+            
 
 
                 
