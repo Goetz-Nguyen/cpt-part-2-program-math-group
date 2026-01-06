@@ -69,10 +69,35 @@ class Pascals_Triangle:
 
             # for new line
             print()
+
+class Midpoint:
+    def __init__(self, x1: int, x2: int, y1: int, y2: int):
+        self._x1 = x1
+        self._x2 = x2
+        self._y1 = y1
+        self._y2 = y2
+    def midpoint(self):
+        x = ((self._x1 + self._x2) / 2)
+        y = ((self._y1 + self._y2) / 2)
+        print(f"The midpoint is {x}, {y}")
+
+class Distance(Midpoint):
+    def __init__(self, x1, x2, y1, y2):
+        super().__init__(x1, x2, y1, y2)
+    def distance(self):
+        d_ans = math.sqrt((self._x2 - self._x1)**2 + (self._y2 - self._y1)**2)
+        print(f"The distance between these 2 points is {d_ans}")
+
+# class Exponent_laws:
+#     def __init__(self, base: int, m: int, n: int):
+#         self._base = base
+#         self._m = m
+#         self._n = n
+#     def 
         
 
 def main():
-    algebralist = ["Quadratics", "Pythagorean", "Pascal's Triangle", "Exit"]
+    algebralist = ["Quadratics", "Pythagorean", "Pascal's Triangle", "Midpoint", "Distance","Exit"]
     menu = promptinput("Pick a formula: ", algebralist)
     match menu:
         case "Quadratics":
@@ -96,6 +121,18 @@ def main():
             except:
                 print("Enter a valid value for N.")
             menu = promptinput("Pick a formula: ", algebralist)
+        case "Midpoint":
+            try:
+                m = Midpoint(int(input("Enter first x coord: ")), int(input("Enter second x coord: ")), int(input("Enter first y coord: ")), int(input("Enter second y coord: ")))
+                m.midpoint()
+            except:
+                print("Enter valid coordinates.")
+        case "Distance":
+            try:
+                d = Distance(int(input("Enter second x coord: ")), int(input("Enter first x coord: ")), int(input("Enter second y coord: ")), int(input("Enter first y coord: ")))
+                d.distance()
+            except:
+                print("Enter valid coordinates.")
         case "Exit":
             return
                 
