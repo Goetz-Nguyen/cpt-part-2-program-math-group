@@ -15,7 +15,7 @@ import math
 # Scientific Notation: Working with very large or small numbers with scientific notation functionality.
 # 1
 
-
+#fix: Error checking for error in equation/Syntax to make an equation
 
 
 #percentage
@@ -25,9 +25,6 @@ import math
 
 def promptinput(message,choices):
     """Creates a prompt of choices
-
-
-
 
     Args:
         message(str): Message to ask
@@ -59,15 +56,13 @@ class Calculation_history:
             print(f"{spot_history}. {equation}")
             spot_history += 1
 
-    def output_history_file(self) -> None:
+    def reset_history(self) -> None:
         with open("Calculator history.txt", "w") as file:
             pass
 
 def menu() -> None:
 
-
     mode = "DEG" #rad/deg
-
 
     while True:
         option = promptinput(
@@ -79,14 +74,12 @@ def menu() -> None:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 calculate(history, mode)
 
-
             case "{ 2. Change mode: RAD/DEG}":
                 if mode == "DEG":
                     mode = "RAD"
                 else:
                     mode = "DEG"
                 print(f"Mode: |{mode}|")
-
 
             case "{ 3. How to use the calculator }":
                 information()
@@ -99,22 +92,10 @@ def menu() -> None:
             case "{ 5. Clear calculator history file }":
                 os.system('cls' if os.name == 'nt' else 'clear')
                 output_history = Calculation_history(history)
-                output_history.output_history_file()
+                output_history.reset_history()
 
             case "{ 6. Exit }":
                 return
-
-
-def trig_conversion_degree(trig, ratio):
-    result = ((int(trig) * math.pi)/180)
-    match ratio:
-        case "sin":
-            return f"{sympy.sin(result)}"
-        case "cos":
-            return f"{sympy.cos(result)}"
-        case "tan":
-            return f"{sympy.tan(result)}"
-
 
 def information():
     # (use: '+' '-' '/' '*' '**' 'sqrt(x)')
@@ -129,41 +110,50 @@ def calculate(history: list[str], mode: str) -> None:
     while True:
         option = promptinput(
             "Would you like to input a calculation/calculations",
-            ["{ 1. Simple calculations }", "{ 2. Go back to menu }"])
+            ["{ 1. Calculate }", "{ 2. Go back to menu }"])
        
         os.system('cls' if os.name == 'nt' else 'clear')
         match option:
-            case "{ 1. Simple calculations }":
+            case "{ 1. Calculate }":
                 while True:
-                    equation = str(input("Equation: "))
+                    original_eq = str(input("Equation: "))
+                    equation = original_eq.split()
+                    
                     #if not true retry
                     if test_calculate() == True:
                         #use alt to evaluate expression
                         if mode == "DEG":
-                            new_equation = ""
 
-                            split_equation = equation.split()
-                            for trig in range(len(split_equation)):
-                                ratio = ""
-                                if "sin" in split_equation[trig]:
-                                    ratio = "sin"
-                                elif "cos" in split_equation[trig]:
-                                    ratio = "cos"
-                                elif "tan" in split_equation[trig]:
-                                    ratio = "tan"
+                            for i in range(len(equation)):
+                                start = 0
+                                end = 0
+                                final = ""
 
-                                split_equation[trig] = split_equation[trig].replace("sin", "")
-                                split_equation[trig] = split_equation[trig].replace("cos", "")
-                                split_equation[trig] = split_equation[trig].replace("tan", "")
-                                split_equation[trig] = split_equation[trig].replace("(", "")
-                                split_equation[trig] = split_equation[trig].replace(")", "")
-                                if split_equation[trig].isnumeric():
-                                    split_equation[trig] = trig_conversion_degree(split_equation[trig], ratio)
+                                for j in range(len(equation[i])):
+                                    if equation[i][j] == "(":
+                                        start = j + 1
 
-                            for new in split_equation:
-                                new_equation += new
-                            result = sympify(new_equation)
-                            result_text = f"| {equation} = {result:.2f} |"
+                                    elif equation[i][j] == ")":
+                                        end = j
+                                    
+                                    num = equation[i][start:end]
+
+                                if "sin" in  equation[i]:
+                                    equation[i] = f"{sympy.sin((int(num) * math.pi)/180)}"
+                                    
+                                elif "cos" in  equation[i]:
+                                    equation[i] = f"{sympy.cos((int(num) * math.pi)/180)}"
+
+                                elif "tan" in  equation[i]:
+                                    equation[i] = f"{sympy.tan((int(num) * math.pi)/180)}"
+                                    
+                            for new in equation:
+                                final += new
+                            result = sympify(final)
+
+                            final_result= f"{round(result, 2):.2f}"
+                            
+                            result_text = f"| {original_eq} = {final_result} |"
                             print(result_text)
                             history.append(result_text)
 
@@ -184,13 +174,8 @@ def calculate(history: list[str], mode: str) -> None:
                         "Would you like to input a calculation again?",
                         choices= ["{ 1. Yes }", "{ 2. Go back }"])
                         os.system('cls' if os.name == 'nt' else 'clear')
-
-
-
-
                         if next_option == "{ 2. Go back }":
                             break
-           
             case "{ 2. Go back to menu }":  
                 break
                      
