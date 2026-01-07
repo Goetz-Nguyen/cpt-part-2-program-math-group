@@ -1376,6 +1376,10 @@ def geometry_calc():
     menu()
 
 def shaper():
+
+    #TUTORIALS VV
+    #https://www.geeksforgeeks.org/python/how-to-draw-shapes-in-matplotlib-with-python/
+    #https://matplotlib.org/stable/gallery/mplot3d/index.html
     while True:
         fig, ax = matplotlib.pyplot.subplots()
         shaper = promptinput("What shape?", ["Circle", "Rectangle/Square", "Exit"])
