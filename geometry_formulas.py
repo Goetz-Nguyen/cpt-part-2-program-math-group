@@ -20,6 +20,17 @@ def promptinput(message,choices):
     return prompt(user_input)[0] # Return chosen answer
 # Geometry
 class Rectangle:
+    """
+    A class that handles on solving the perimeter and area of a rectangle
+
+    Attributes:
+        length (int): Length of the rectangle 
+        width (int): Width of the rectangle
+
+    Invariants:
+        - Cannot have an empty input 
+        - Cannot have a negative input
+    """       
     def __init__(self, length: int, width: int) -> None:
         self._length = length
         self._width = width
@@ -32,6 +43,16 @@ class Rectangle:
 
 
 class Square:
+    """
+    A class that handles on solving the perimeter and area of a square
+
+    Attributes:
+        s (int): Side of the square
+
+    Invariants:
+        - Cannot have an empty input 
+        - Cannot have a negative input
+    """    
     def __init__(self, s: int):
         self._s = s
     def square_perimeter(self):
@@ -42,7 +63,21 @@ class Square:
         print(f"The area of the square is {sq_area} units.")
 
 class Triangle:
-    def __init__(self, a: int, b: int, c: int, base:int , height: int,):
+    """
+    A class that handles on solving the perimeter and area of a triangle
+
+    Attributes:
+        a (int): Side 'a' value
+        b (int): Side 'b' value
+        c (int): Side 'c' value
+        base (int): Base of the triangle
+        height (int): Height of the triangle
+
+    Invariants:
+        - Cannot have an empty input 
+        - Cannot have a negative input
+    """ 
+    def __init__(self, a: int, b: int, c: int, base:int , height: int):
         self._a = a
         self._b = b
         self._c = c
@@ -56,6 +91,17 @@ class Triangle:
         print(f"The area of the triangle is {t_area:.2f} units")
 
 class Circle:
+    """
+    A class that handles on solving the diameter, radius, and circumference of a circle
+
+    Attributes:
+        length (int): Length of the rectangle 
+        width (int): Width of the rectangle
+
+    Invariants:
+        - Cannot have an empty input 
+        - Cannot have a negative input
+    """ 
     def __init__(self, diameter: int, radius: int, circumference: int) -> None:
         self._diameter = diameter
         self._radius = radius
@@ -73,6 +119,16 @@ class Circle:
 
 # 3D Shapes
 class Cube(Square):
+    """
+    A class that handles on solving the volume and surface area of the cube
+
+    Attributes:
+        s (int): Side of the cube
+
+    Invariants:
+        - Cannot have an empty input 
+        - Cannot have a negative input
+    """ 
     def __init__(self, s: int):
         super().__init__(s)
     def cube_volume(self):
@@ -81,7 +137,20 @@ class Cube(Square):
     def cube_surface_area(self):
         c_surface_area = 6*self._s**2
         print(f"The surface area of the cube is {c_surface_area} units.")
+
 class Rectangular_Prism(Rectangle):
+    """
+    A class that handles on solving the volume and surface area of the rectangular prism
+
+    Attributes:
+        length (int): Length of the rectangular prism
+        width (int): Width of the rectangular prism
+        height (int): Height of the rectangular prism
+
+    Invariants:
+        - Cannot have an empty input 
+        - Cannot have a negative input
+    """ 
     def __init__(self, length: int, width: int, height: int):
         super().__init__(length, width)
         self._height = height
@@ -130,77 +199,71 @@ class Cone(Circular_cylinder):
 
 
 def main():
-    shapeslist = ["Square", "Rectangle", "Triangle", "Circle", "Cube", "Rectangular Prism",
-                  "Circular Cylinder", "Cone", "Exit"]
-    menu = promptinput("Pick shape:", shapeslist)
-    match menu:
-        case "Square":
-            try: 
-                sq1 = Square(int(input("Enter side length: ")))
-            except:
-                print("Enter valid numbers")
-            sq1.square_perimeter()
-            sq1.square_area()
-            menu = promptinput("Pick shape:", shapeslist)
-        case "Rectangle":
-            try:
-                rect1 = Rectangle(int(input("Enter length: ")), int(input("Enter width: ")))
-            except:
-                print("Enter valid numbers")
-            rect1.rectangle_area()
-            rect1.rectangle_perimeter()
-            menu = promptinput("Pick shape:", shapeslist)
-        case "Triangle":
-            try:
-                tri1 = Triangle(int(input("Enter side a: ")), int(input("Enter side b: ")), int(input("Enter side c: ")), int(input("Enter base: ")), int(input("Enter height: ")))
-            except:
-                print("Enter valid numbers")
-            tri1.triangle_perimeter()
-            tri1.triangle_area()
-            menu = promptinput("Pick shape:", shapeslist)
-        case "Circle":
-            try:
-                cir1 = Circle(int(input("Enter diameter: ")), int(input("Enter radius: ")), int(input("Enter circumference: ")))
-            except: 
-                print("Enter valid numbers")
-            cir1.diameter()
-            cir1.circumference()
-            cir1.circle_area()
-            menu = promptinput("Pick shape:", shapeslist)
-        case "Cube":
-            try: 
-                cub = Cube(int(input("Enter side value: ")))
-            except:
-                print("Invalid Value")
-            cub.cube_volume()
-            cub.cube_surface_area()
-            menu = promptinput("Pick shape:", shapeslist)
-        case "Rectangular Prism":
-            try: 
-                rectangular_p = Rectangular_Prism(int(input("Enter length: ")), int(input("Enter width: ")), int(input("Enter height: ")))
-            except:
-                print("Invalid value")
-            rectangular_p.rect_prism_volume()
-            rectangular_p.rect_prism_surface_area()
-            menu = promptinput("Pick shape:", shapeslist)
-        case "Circular Cylinder":
-            try:
-                cylinder = Circular_cylinder(int(input("Enter radius: ")), int(input("Enter height:  ")))
-            except:
-                print("Enter valid number")
-            cylinder.cylinder_volume()
-            cylinder.cylinder_surface_area()
-            menu = promptinput("Pick shape:", shapeslist)
-        case "Cone":
-            try:
-                cne = Cone(int(input("Enter radius: ")), int(input("Enter height: ")))
-            except:
-                print("Enter valid values")
-            cne.cone_volume()
-            cne.cone_surface_area()
-            menu = promptinput("Pick shape:", shapeslist)
-        case "Exit":
-            return
+    while True:
+            
+        shapeslist = ["Square", "Rectangle", "Triangle", "Circle", "Cube", "Rectangular Prism",
+                    "Circular Cylinder", "Cone", "Exit"]
+        menu = promptinput("Pick shape:", shapeslist)
+        match menu:
+            case "Square":
+                try: 
+                    sq1 = Square(int(input("Enter side length: ")))
+                except:
+                    print("Enter valid numbers")
+                sq1.square_perimeter()
+                sq1.square_area()
+            case "Rectangle":
+                try:
+                    rect1 = Rectangle(int(input("Enter length: ")), int(input("Enter width: ")))
+                except:
+                    print("Enter valid numbers")
+                rect1.rectangle_area()
+                rect1.rectangle_perimeter()
+            case "Triangle":
+                try:
+                    tri1 = Triangle(int(input("Enter side a: ")), int(input("Enter side b: ")), int(input("Enter side c: ")), int(input("Enter base: ")), int(input("Enter height: ")))
+                except:
+                    print("Enter valid numbers")
+                tri1.triangle_perimeter()
+                tri1.triangle_area()
+            case "Circle":
+                try:
+                    cir1 = Circle(int(input("Enter diameter: ")), int(input("Enter radius: ")), int(input("Enter circumference: ")))
+                except: 
+                    print("Enter valid numbers")
+                cir1.diameter()
+                cir1.circumference()
+                cir1.circle_area()
+            case "Cube":
+                try: 
+                    cub = Cube(int(input("Enter side value: ")))
+                except:
+                    print("Invalid Value")
+                cub.cube_volume()
+                cub.cube_surface_area()
+            case "Rectangular Prism":
+                try: 
+                    rectangular_p = Rectangular_Prism(int(input("Enter length: ")), int(input("Enter width: ")), int(input("Enter height: ")))
+                except:
+                    print("Invalid value")
+                rectangular_p.rect_prism_volume()
+                rectangular_p.rect_prism_surface_area()
+            case "Circular Cylinder":
+                try:
+                    cylinder = Circular_cylinder(int(input("Enter radius: ")), int(input("Enter height:  ")))
+                except:
+                    print("Enter valid number")
+                cylinder.cylinder_volume()
+                cylinder.cylinder_surface_area()
+            case "Cone":
+                try:
+                    cne = Cone(int(input("Enter radius: ")), int(input("Enter height: ")))
+                except:
+                    print("Enter valid values")
+                cne.cone_volume()
+                cne.cone_surface_area()
+            case "Exit":
+                return
 
 if __name__ == "__main__":
     main()
