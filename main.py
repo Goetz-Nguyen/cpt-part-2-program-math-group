@@ -1570,16 +1570,19 @@ def algebra_formulas():
             self._b = b
             self._c = c
         def pythagorean_theorem(self):
-            side = input("Which side to solve?: [a,b,c] ")
-            if side.lower() == "c":
-                py_theorem = math.sqrt(self._a**2 + self._b**2)
-                print(f"The length of C is {py_theorem:.2f}")
-            elif side.lower() == "a":
-                py_theorem = math.sqrt(self._c**2 - self._b**2)
-                print(f"The length of A is {py_theorem:.2f}")
-            elif side.lower() == "b":
-                py_theorem = math.sqrt(self._c**2 - self._a**2)
-                print(f"The length of B is {py_theorem:.2f}")
+            try:
+                side = input("Which side to solve?: [a,b,c] ")
+                if side.lower() == "c":
+                    py_theorem = math.sqrt(self._a**2 + self._b**2)
+                    print(f"The length of C is {py_theorem:.2f}")
+                elif side.lower() == "a":
+                    py_theorem = math.sqrt(self._c**2 - self._b**2)
+                    print(f"The length of A is {py_theorem:.2f}")
+                elif side.lower() == "b":
+                    py_theorem = math.sqrt(self._c**2 - self._a**2)
+                    print(f"The length of B is {py_theorem:.2f}")
+            except:
+                print("Couldn't calculate using the numbers!")
 
     class Pascals_Triangle:
         def __init__(self, n: int):
@@ -1622,44 +1625,48 @@ def algebra_formulas():
             
 
     def main():
-        algebralist = ["Quadratics", "Pythagorean", "Pascal's Triangle", "Midpoint", "Distance","Exit"]
-        menu = promptinput("Pick a formula: ", algebralist)
-        match menu:
-            case "Quadratics":
-                try:
-                    variables = Quadratics(int(input("Enter first number: ")), int(input("Enter second number: ")), int(input("Enter third number: ")))
-                except:
-                    print("Enter a valid number.")
-                variables.quadratic()
-                menu = promptinput("Pick a formula: ", algebralist)
-            case "Pythagorean":
-                try: 
-                    sides = Pythagorean(int(input("Enter first number: ")), int(input("Enter second number: ")), int(input("Enter third number: ")))
-                except: 
-                    print("Enter valid number.")
-                sides.pythagorean_theorem()
-                menu = promptinput("Pick a formula: ", algebralist)
-            case "Pascal's Triangle":
-                try:
-                    n = Pascals_Triangle(int(input("Enter the value of N: ")))
-                    n.printing_triangle()
-                except:
-                    print("Enter a valid value for N.")
-                menu = promptinput("Pick a formula: ", algebralist)
-            case "Midpoint":
-                try:
-                    m = Midpoint(int(input("Enter first x coord: ")), int(input("Enter second x coord: ")), int(input("Enter first y coord: ")), int(input("Enter second y coord: ")))
-                    m.midpoint()
-                except:
-                    print("Enter valid coordinates.")
-            case "Distance":
-                try:
-                    d = Distance(int(input("Enter second x coord: ")), int(input("Enter first x coord: ")), int(input("Enter second y coord: ")), int(input("Enter first y coord: ")))
-                    d.distance()
-                except:
-                    print("Enter valid coordinates.")
-            case "Exit":
-                return
+        while True:
+            algebralist = ["Quadratics", "Pythagorean", "Pascal's Triangle", "Midpoint", "Distance","Exit"]
+            menu = promptinput("Pick a formula: ", algebralist)
+            match menu:
+                case "Quadratics":
+                    os.system('cls' if os.name == 'nt' else 'clear') 
+                    try:
+                        variables = Quadratics(int(input("Enter first number: ")), int(input("Enter second number: ")), int(input("Enter third number: ")))
+                    except:
+                        print("Enter a valid number.")
+                    variables.quadratic()
+                case "Pythagorean":
+                    os.system('cls' if os.name == 'nt' else 'clear') 
+                    try: 
+                        sides = Pythagorean(int(input("Enter first number: ")), int(input("Enter second number: ")), int(input("Enter third number: ")))
+                    except: 
+                        print("Enter valid number.")
+                    sides.pythagorean_theorem()
+                case "Pascal's Triangle":
+                    os.system('cls' if os.name == 'nt' else 'clear') 
+                    try:
+                        n = Pascals_Triangle(int(input("Enter the value of N: ")))
+                        n.printing_triangle()
+                    except:
+                        print("Enter a valid value for N.")
+                case "Midpoint":
+                    os.system('cls' if os.name == 'nt' else 'clear') 
+                    try:
+                        m = Midpoint(int(input("Enter first x coord: ")), int(input("Enter second x coord: ")), int(input("Enter first y coord: ")), int(input("Enter second y coord: ")))
+                        m.midpoint()
+                    except:
+                        print("Enter valid coordinates.")
+                case "Distance":
+                    os.system('cls' if os.name == 'nt' else 'clear') 
+                    try:
+                        d = Distance(int(input("Enter second x coord: ")), int(input("Enter first x coord: ")), int(input("Enter second y coord: ")), int(input("Enter first y coord: ")))
+                        d.distance()
+                    except:
+                        print("Enter valid coordinates.")
+                case "Exit":
+                    os.system('cls' if os.name == 'nt' else 'clear') 
+                    return
     main()
 
 
