@@ -3,6 +3,7 @@ from sympy import sympify
 from InquirerPy import prompt
 from PyDesmos import Graph
 from matplotlib.patches import Circle, Rectangle
+from math import factorial
 
 def promptinput(message,choices):
     """Creates a prompt of choices
@@ -1407,8 +1408,6 @@ def shaper():
 
 def scientific_calc():
     history = []
-
-
     class Calculation_history:
         def __init__(self, history: list[str]):
             self._history = history
@@ -1449,7 +1448,6 @@ def scientific_calc():
                     information()
             
                 case "{ 4. Get calculator history }":
-                    os.system('cls' if os.name == 'nt' else 'clear')
                     show_history = Calculation_history(history)
                     show_history.get_history()
 
@@ -1671,6 +1669,7 @@ def main():
                      "Study Guides", "Math Definitions", "Graph Calculator", "Mental Math",
                      "Simple Calculator", "Scientific Calculator", "Geometry Calculator",  
                      "Draw Shapes", "Algebra Calculator", "Exit"]
+    
     choice = promptinput("What do you want?", menu_options)
     while choice != "Exit":
         os.system('cls' if os.name == 'nt' else 'clear')  # Clean terminal
