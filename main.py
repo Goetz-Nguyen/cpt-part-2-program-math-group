@@ -25,6 +25,11 @@ def promptinput(message,choices):
 
 
 def geometry_test():
+    """
+    Prints 10 questions, one at a time for the user, which then is asked for the input of the correct answer.
+    It is mainly focused for the unit of Geometry.
+    If the answer is the same as the answers listed, it will add a point, which is totaled at the end.
+    """
     print("== PRE MADE GEOMETRY TEST QUESTIONS!! ==")
     score = 0
     total = 10
@@ -34,7 +39,7 @@ def geometry_test():
     print("Find the hypotenuse. (Round to nearest tenth)")
     ans = input("Your answer: ")
     if ans in ["15.0", "15", "15.1"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -43,7 +48,7 @@ def geometry_test():
     print("A) 42*   B) 84*   C) 126*   D) 168*")
     ans = input("Your answer: ")
     if ans == "a":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
     
@@ -51,7 +56,7 @@ def geometry_test():
     print("#3: A cylinder has a radius 4 and height 10. What is its volume? (Use pi)")
     ans = input("Your answer: ")
     if ans == "160":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
     
@@ -59,7 +64,7 @@ def geometry_test():
     print("#4: Find the slope between (–3, 5) and (4, –2).")
     ans = input("Your answer: ")
     if ans in ["-1", "-1.0"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
     
@@ -68,7 +73,7 @@ def geometry_test():
     print("Given sides a=7, b=9, and angle C=42*, solve for side c (nearest tenth).")
     ans = input("Your answer: ")
     if ans in ["6", "6.0", "6.1"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
     
@@ -77,7 +82,7 @@ def geometry_test():
     print("A) (-x, y)   B) (x, -y)   C) (-x, -y)   D) (y, x)")
     ans = input("Your answer: ")
     if ans == "a":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -86,14 +91,14 @@ def geometry_test():
     print("If a side in the smaller triangle is 12, what is the corresponding larger side?")
     ans = input("Your answer: ")
     if ans == "20":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
     # 8
     print("#8: Find the distance between points (2, 3) and (11, 9).")
     ans = input("Your answer: ")
     if ans in ["10.8", "10.819", "11"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
     
@@ -101,7 +106,7 @@ def geometry_test():
     print("#9: Find the area of a triangle with sides 8, 9, and 13.")
     ans = input("Your answer: ")
     if ans in ["36", "37"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
     
@@ -109,7 +114,7 @@ def geometry_test():
     print("#10: What is the interior angle of a regular 12 sided polygon?")
     ans = input("Your answer: ")
     if ans in ["150", "150*", "150 degrees"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
     print("== GEOMETRY TEST WAS COMPLETED. ==")
@@ -117,6 +122,11 @@ def geometry_test():
     return score
 
 def polynomials_test():
+    """
+    Prints 10 questions, one at a time for the user, which then is asked for the input of the correct answer.
+    It is mainly focused for the unit of Polynomials.
+    If the answer is the same as the answers listed, it will add a point, which is totaled at the end.
+    """
 
     print("== PRE MADE POLYNOMIALS TEST QUESTIONS!! ==")
     score = 0
@@ -127,7 +137,7 @@ def polynomials_test():
     print("A) 18x^4(x + 2)   B) 18x^5(x + 2)   C) 6x^4(3x + 6)   D) x^4(18x + 36)")
     ans = input("Your answer: ")
     if ans == "a":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -139,7 +149,7 @@ def polynomials_test():
     print("D) x^3 + 4x^2 − 17x − 20")
     ans = input("Your answer: ")
     if ans == "d":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -148,7 +158,7 @@ def polynomials_test():
     print("A) (x − 8)(x + 2)   B) (x − 4)(x + 4)   C) (x − 16)(x + 1)   D) Prime")
     ans = input("Your answer: ")
     if ans == "b":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -157,7 +167,7 @@ def polynomials_test():
     print("A) 10x^5   B) 7x^6   C) 10x^6   D) x^5")
     ans = input("Your answer: ")
     if ans == "a":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -166,7 +176,7 @@ def polynomials_test():
     print("A) (x + 10)(x + 2)   B) (x + 5)(x + 4)   C) (x − 5)(x − 4)   D) Prime")
     ans = input("Your answer: ")
     if ans == "b":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -175,16 +185,16 @@ def polynomials_test():
     print("A) 1   B) 2   C) 3   D) 6")
     ans = input("Your answer: ")
     if ans == "c":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
     # 7
-    print("#7: Simplify: (x^2 − 9) ÷ (x − 3)")
+    print("#7: Simplify: (x^2 − 9) / (x − 3)")
     print("A) x − 3   B) x + 3   C) x^2 − 3   D) Cannot be simplified")
     ans = input("Your answer: ")
     if ans == "b":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -193,7 +203,7 @@ def polynomials_test():
     print("A) x^2 + 25   B) x^2 + 10x + 25   C) x^2 − 10x + 25   D) 2x + 10")
     ans = input("Your answer: ")
     if ans == "b":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -205,7 +215,7 @@ def polynomials_test():
     print("D) Prime")
     ans = input("Your answer: ")
     if ans == "a":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -214,7 +224,7 @@ def polynomials_test():
     print("A) 7   B) 10   C) 5   D) 1")
     ans = input("Your answer: ")
     if ans == "c":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
     print("== POLYNOMIAL TEST WAS COMPLETED. ==")
@@ -223,26 +233,30 @@ def polynomials_test():
     return score
 
 def algebra_tests():
+    """
+    Prints 10 questions, one at a time for the user, which then is asked for the input of the correct answer.
+    It is mainly focused for the unit on Algebra.
+    If the answer is the same as the answers listed, it will add a point, which is totaled at the end.
+    """
     print("== PRE MADE ALGEBRA TEST QUESTIONS!! ==")
     score = 0
     total = 5
-
 
     # 1
     print("#1: Find all sides of a right triangle whose perimeter is equal to 60 cm and its area is equal to 150 square cm.")
     print("Enter the numbers via the example: '10 20 30'")
     ans = input("Your answer: ")
     if ans in ["25 15 20", "25 20 15", "15 25 20", "15 20 25", "20 15 25", "20 25 15"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
     #2
     print("#2: If 200 is added to a positive integer I, the result is a square number. If 276 is added to to the same integer I, another square number is obtained. Find I.")
-    print("A) Make sure your answer is writtin in this exact format: 'I=x^z - _ = _'")
+    print("A) Make sure your answer is writtin in this exact format: 'I=x^z - ? = ?'")
     ans = input("Your answer: ")
     if ans == "I=x^2 − 200 = 124":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
    
@@ -251,7 +265,7 @@ def algebra_tests():
     print("3.5 seconds later and the speed of sound is 1087 feet/second, what is the height of the well? (Round to the nearest unit)")
     ans = input("Your answer: ")
     if ans in ["178", "178 Feet", "178ft", "178Ft", "178FT", "178Feet", "178FEET", "178 FEET"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
    
@@ -261,7 +275,7 @@ def algebra_tests():
     print("60 percent of the pool is empty when pump B broke down. How much time after 12:00 p.m. would it take pump A to empty the pool?")
     ans = input("Your answer: ")
     if ans in ["3.766", "3.7", "3.8","3.766h", "3.7h", "3.8h","3.766hours", "3.7hours", "3.8hhours",]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -272,7 +286,7 @@ def algebra_tests():
     print("Given sides a=7, b=9, and angle C=42*, solve for side c (nearest tenth).")
     ans = input("Your answer: ")
     if ans in ["3600 meters", "3600 m", "3600m"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -282,6 +296,11 @@ def algebra_tests():
     return score
 
 def coordinate_planes_test():
+    """
+    Prints 10 questions, one at a time for the user, which then is asked for the input of the correct answer.
+    It is mainly focused for the unit on Coordinate Planes.
+    If the answer is the same as the answers listed, it will add a point, which is totaled at the end.
+    """
     print("== PRE MADE COORDINATE PLANES TEST QUESTIONS!! ==")
     score = 0
     total = 10
@@ -291,7 +310,7 @@ def coordinate_planes_test():
     print("A) Quadrant I   B) Quadrant II   C) Quadrant III   D) Quadrant IV")
     ans = input("Your answer: ")
     if ans == "d":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -299,7 +318,7 @@ def coordinate_planes_test():
     print("#2: What is the x-coordinate of the point (-3, 5)?")
     ans = input("Your answer: ")
     if ans == "-3":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -307,7 +326,7 @@ def coordinate_planes_test():
     print("#3: Find the slope between the points (2, 4) and (6, 12).")
     ans = input("Your answer: ")
     if ans in ["2", "2.0"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -316,7 +335,7 @@ def coordinate_planes_test():
     print("A) (5, 0)   B) (0, 6)   C) (3, 3)   D) (-4, 2)")
     ans = input("Your answer: ")
     if ans == "b":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -324,7 +343,7 @@ def coordinate_planes_test():
     print("#5: Find the distance between the points (1, 1) and (4, 5). (Round to nearest tenth)")
     ans = input("Your answer: ")
     if ans in ["5", "5.0", "5.1"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -333,7 +352,7 @@ def coordinate_planes_test():
     print("A) (x, -y)   B) (-x, y)   C) (-x, -y)   D) (y, x)")
     ans = input("Your answer: ")
     if ans == "a":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -341,7 +360,7 @@ def coordinate_planes_test():
     print("#7: What is the midpoint between the points (2, 6) and (8, 10)?")
     ans = input("Your answer: ")
     if ans in ["5 8", "(5,8)", "(5, 8)", "5,8", "5, 8"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -350,7 +369,7 @@ def coordinate_planes_test():
     print("A) (3, -4)   B) (-2, 5)   C) (-6, -1)   D) (4, 2)")
     ans = input("Your answer: ")
     if ans == "c":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -358,7 +377,7 @@ def coordinate_planes_test():
     print("#9: What is the slope of a horizontal line?")
     ans = input("Your answer: ")
     if ans in ["0", "0.0"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -366,7 +385,7 @@ def coordinate_planes_test():
     print("#10: What is the ordered pair of the origin?")
     ans = input("Your answer: ")
     if ans in ["0 0", "(0,0)", "(0, 0)", "0,0", "0, 0"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
     print("== COORDINATE PLANES TEST WAS COMPLETED. ==")
@@ -374,6 +393,11 @@ def coordinate_planes_test():
     return score
 
 def trigonometry_test():
+    """
+    Prints 10 questions, one at a time for the user, which then is asked for the input of the correct answer.
+    It is mainly focused for the unit on Trigonometry.
+    If the answer is the same as the answers listed, it will add a point, which is totaled at the end.
+    """
     print("== PRE MADE TRIGONOMETRY TEST QUESTIONS!! ==")
     score = 0
     total = 10
@@ -383,7 +407,7 @@ def trigonometry_test():
     print("A) Adjacent   B) Hypotenuse   C) Tangent   D) Cosine")
     ans = input("Your answer: ")
     if ans == "b":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -392,7 +416,7 @@ def trigonometry_test():
     print("A) Opposite   B) Adjacent   C) Tangent   D) Sine")
     ans = input("Your answer: ")
     if ans == "b":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -402,7 +426,7 @@ def trigonometry_test():
     print("C) Opposite / Adjacent   D) Hypotenuse / Opposite")
     ans = input("Your answer: ")
     if ans == "c":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -410,7 +434,7 @@ def trigonometry_test():
     print("#4: Find sin(30*)")
     ans = input("Your answer: ")
     if ans in ["0.5", "1/2"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -418,7 +442,7 @@ def trigonometry_test():
     print("#5: Find cos(60*)")
     ans = input("Your answer: ")
     if ans in ["0.5", "1/2"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -427,7 +451,7 @@ def trigonometry_test():
     print("If the ladder is 10m long, how high up the wall does it reach? (Nearest tenth)")
     ans = input("Your answer: ")
     if ans in ["8.7", "8.66", "8.7m"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -436,7 +460,7 @@ def trigonometry_test():
     print("A) Sine   B) Cosine   C) Tangent   D) Secant")
     ans = input("Your answer: ")
     if ans == "c":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -444,7 +468,7 @@ def trigonometry_test():
     print("#8: Find tan(45*)")
     ans = input("Your answer: ")
     if ans in ["1", "1.0"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -454,7 +478,7 @@ def trigonometry_test():
     print("C) From the vertical   D) Inside the triangle")
     ans = input("Your answer: ")
     if ans == "b":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -464,7 +488,7 @@ def trigonometry_test():
     print("C) Side opposite right angle   D) Both B and C")
     ans = input("Your answer: ")
     if ans == "d":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
     print("== TRIGONOMETRY TEST WAS COMPLETED. ==")
@@ -472,6 +496,11 @@ def trigonometry_test():
     return score
 
 def quadratics_test():
+    """
+    Prints 10 questions, one at a time for the user, which then is asked for the input of the correct answer.
+    It is mainly focused for the unit on Quadratics.
+    If the answer is the same as the answers listed, it will add a point, which is totaled at the end.
+    """
     print("== PRE MADE QUADRATICS TEST QUESTIONS!! ==")
     score = 0
     total = 10
@@ -482,7 +511,7 @@ def quadratics_test():
     print("C) y = a(x + h)^2 + k   D) y = x^3")
     ans = input("Your answer: ")
     if ans == "b":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -490,7 +519,7 @@ def quadratics_test():
     print("#2: Factor: x^2 + 5x + 6")
     ans = input("Your answer: ")
     if ans in ["(x+2)(x+3)", "(x + 2)(x + 3)"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -498,7 +527,7 @@ def quadratics_test():
     print("#3: Factor: x^2 − 9")
     ans = input("Your answer: ")
     if ans in ["(x-3)(x+3)", "(x + 3)(x - 3)"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -506,7 +535,7 @@ def quadratics_test():
     print("#4: What is the vertex of y = (x − 4)^2 + 1?")
     ans = input("Your answer: ")
     if ans in ["(4,1)", "(4, 1)"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -515,7 +544,7 @@ def quadratics_test():
     print("A) 1   B) 2   C) 3   D) Depends")
     ans = input("Your answer: ")
     if ans == "d":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -523,7 +552,7 @@ def quadratics_test():
     print("#6: Find the axis of symmetry for y = x^2 − 6x + 2")
     ans = input("Your answer: ")
     if ans in ["x=3", "x = 3"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -531,7 +560,7 @@ def quadratics_test():
     print("#7: Expand: (x + 4)^2")
     ans = input("Your answer: ")
     if ans in ["x^2+8x+16", "x^2 + 8x + 16"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -539,7 +568,7 @@ def quadratics_test():
     print("#8: What is the shape of a quadratic graph?")
     ans = input("Your answer: ")
     if ans.lower() == "parabola":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -547,7 +576,7 @@ def quadratics_test():
     print("#9: Solve: x^2 − 4 = 0")
     ans = input("Your answer: ")
     if ans in ["x=2,-2", "2,-2", "-2,2"]:
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
 
@@ -556,7 +585,7 @@ def quadratics_test():
     print("A) Down   B) Up")
     ans = input("Your answer: ")
     if ans == "b":
-        score += 1
+        score += 1 #Adds a 1 to the score variable if it was the right answer
 
     print("")
     print("== QUADRATICS TEST WAS COMPLETED. ==")
@@ -564,6 +593,10 @@ def quadratics_test():
     return score
 
 def math_definitions():
+    """
+    Asks the user to choose which unit they would like to access the definitions for.
+    Once a unit is chosen, it will print out key definitions in that unit with short descriptions.
+    """
     defintions = ["Geometry", "Trigonometry", "Algebra", "Coordinate Planes", 
                   "Quadratics", "Polynomials", "Back"]
     choice = promptinput("Chose an option: ", defintions)
@@ -621,7 +654,7 @@ def math_definitions():
             print("Elmination Method: A solving formula where a variable is removed by adding or subtracting two equations.")
             print("Expand: Multiplying.")
             print("Exponent: The amount of times the base is factored.")
-            print("Greatest Common Factor: The largest number that divides into two temrs.")
+            print("Greatest Common Factor: The largest number that divides into two terms.")
 
         case "Coordinate Planes":
             print("== COORDINATE PLANE VOCABULARY ==:")
@@ -667,8 +700,12 @@ def math_definitions():
             return
 
 def show_sources():
+    """
+    Asks the user to pick which unit they want chosen study sources for.
+    When a unit is chosen, it will print out many sources under that unit.
+    """
     print("== STUDY SOURCES ==")
-    units = ["Geometry", "Coordinate Planes", "Back"]
+    units = ["Geometry", "Coordinate Planes", "Polynomials", "Quadratics", "Algebra", "Back"]
     choice = promptinput("Choose an option: ", units)
 
     match choice:
@@ -725,8 +762,10 @@ def show_sources():
             print("")
 
 
-        case "Coordinate planes":
+        case "Coordinate Planes":
             print("== COORDINATE PLANES ==")
+
+
             print("Reflection Across the X and Y Axis")
             print("Explains reflections over the x-axis, y-axis, and origin.")
             print("https://youtu.be/DerrI1FstO4")
@@ -755,26 +794,163 @@ def show_sources():
             print("Explains basic coordinate plane terms such as axis, origin, and quadrants.")
             print("https://youtu.be/qcb-mcREIi0")
             print("")
+
+
+        case "Polynomials":
+            print("== POLYNOMIAL SOURCES ==")
+
+
+            print("Algebra Basics What Are Polynomials")
+            print("Explains what polynomials are and their parts.")
+            print("https://www.youtube.com/watch?v=ffLLmV4mZwU")
+            print("")
+
+
+            print("Polynomials Adding Subtracting Multiplying and Dividing")
+            print("Shows all basic polynomial operations.")
+            print("https://www.youtube.com/watch?v=ZvL9aDGNHqA")
+            print("")
+
+
+            print("How to Factor Polynomials the Easy Way")
+            print("Teaches how to factor polynomials step by step.")
+            print("https://www.youtube.com/watch?v=U6FndtdgpcA&pp=ygUmSG93IHRvIEZhY3RvciBQb2x5bm9taWFscyB0aGUgRWFzeSBXYXnSBwkJTQoBhyohjO8%3D")
+            print("")
+
+
+            print("Solving Word Problems with Polynomials")
+            print("Shows how to solve polynomial word problems.")
+            print("https://www.youtube.com/watch?v=TenlbkEJGe4")
+            print("")
+
+
+            print("Introduction to Polynomial Functions")
+            print("Explains polynomial functions and graphs.")
+            print("https://www.youtube.com/watch?v=6Uh3Z6DJ_pI")
+            print("")
+
+
+            print("Khan Academy Polynomials")
+            print("Practice and lessons for polynomials.")
+            print("https://www.khanacademy.org/math/algebra-home/alg-polynomials")
+            print("")
+
+
+        case "Quadratics":
+            print("== QUADRATIC SOURCES ==")
+
+
+            print("Quadratics Top 10 Must Knows")
+            print("Covers key quadratic concepts and solving methods.")
+            print("https://www.youtube.com/watch?v=SGUP6BkA870&pp=ygUcUXVhZHJhdGljcyBUb3AgMTAgTXVzdCBLbm93cw%3D%3D")
+            print("")
+
+
+            print("Five Different Ways to Solve a Quadratic Equation")
+            print("Shows multiple methods to solve quadratics.")
+            print("https://youtu.be/u0mZ8wm-D48?si=0zyb-6ld1nI0fQeJ")
+            print("")
+
+
+            print("Factoring Quadratics as x plus a x plus b")
+            print("Teaches how to factor simple quadratic equations.")
+            print("https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:quadratics-multiplying-factoring/x2f8bb11595b61c86:factor-quadratics-intro/v/factoring-simple-quadratic-expression")
+            print("")
+
+
+            print("Using the Quadratic Formula")
+            print("Explains how to solve quadratics using the formula.")
+            print("https://www.khanacademy.org/math/algebra/quadratics/solving-quadratics-using-the-quadratic-formula/v/using-the-quadratic-formula")
+            print("")
+
+
+            print("JensenMath Quadratics Unit")
+            print("Practice questions and review for quadratics.")
+            print("https://www.jensenmath.ca/math10-unit-5")
+            print("")
+
+
+        case "Algebra":
+            print("== ALGEBRA SOURCES ==")
+
+
+            print("Khan Academy Algebra 2")
+            print("Full lessons and practice for Algebra topics.")
+            print("https://www.khanacademy.org/math/algebra2")
+            print("")
+
+
+            print("What Is a Variable")
+            print("Explains what variables are and how they are used.")
+            print("https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:foundation-algebra/x2f8bb11595b61c86:intro-variables/v/what-is-a-variable")
+            print("")
+
+
+            print("Intro to Combining Like Terms")
+            print("Shows how to combine terms with the same variable.")
+            print("https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:foundation-algebra/x2f8bb11595b61c86:combine-like-terms/v/combining-like-terms")
+            print("")
+
+
+            print("Linear Equations")
+            print("Teaches how to solve basic linear equations.")
+            print("https://www.khanacademy.org/math/algebra-home/alg-basic-eq-ineq/alg-old-school-equations/v/algebra-linear-equations-1")
+            print("")
+
+
+            print("Equation With the Variable in the Denominator")
+            print("Shows how to solve equations with fractions.")
+            print("https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:solve-equations-inequalities/x2f8bb11595b61c86:linear-equations-variables-both-sides/v/ex-2-multi-step-equation")
+            print("")
+
+
+            print("Learn Fractions in 9 Minutes")
+            print("Quick review of fraction rules used in algebra.")
+            print("https://youtu.be/GvPB9B9fG04?si=s9bqiPz5DQNJq0aM")
+            print("")
+
+
+            print("Solving Systems of Equations Using Elimination")
+            print("Shows how to solve systems using elimination.")
+            print("https://youtu.be/cz6UmZLWgEw?si=XcgCsU-KgVLd0tZG")
+            print("")
+
+
+            print("Partial Fraction Decomposition")
+            print("Explains how to break rational expressions into parts.")
+            print("https://youtu.be/QKkdYW77xNI?si=EeoXuQ9Xeve4dC7j")
+            print("")
+
         case "Back":
             return
     
 
 def save_test(test_name, questions, answers):
+    """
+    When the function is accessed, it will save a file onto the user's computer under the chosen name with
+    their custom made test questions and answers on it.
+    """
     file = open(test_name + ".txt", "w")
     for i in range(len(questions)):
-        file.write(questions[i] + "\n")
-        file.write(answers[i] + "\n")
+        file.write(questions[i] + "\n") # Writes a question to the file
+        file.write(answers[i] + "\n") # Writes the corrisponding answer to the question onto the file.
     file.close()
 
 
 def load_test(filename):
+    """
+    When the function is accessed, it will search for a file onto the user's computer for the inputted name
+    that contains the user's custom questions and answers.
+
+    It will then add it to the program, which can now be accessed and run.
+    """
     tests = {}
     try:
-        file = open(filename, "r")
-        lines = file.readlines()
+        file = open(filename, "r") # Opens the chosen file.
+        lines = file.readlines() # Copies all of the line's from the file to the program.
         file.close()
     except:
-        print("File could not be loaded.")
+        print("File could not be loaded.") # If no file under that name exists, it will fail.
         return tests
 
     questions = []
@@ -782,8 +958,8 @@ def load_test(filename):
 
     i = 0
     while i < len(lines):
-        questions.append(lines[i].strip())
-        answers.append(lines[i + 1].strip())
+        questions.append(lines[i].strip()) # Add's the question from the test into the list.
+        answers.append(lines[i + 1].strip()) #Add's the answer from the test into the list.
         i += 2
 
     test_name = filename.replace(".txt", "")
@@ -792,6 +968,12 @@ def load_test(filename):
 
 
 def create_tests():
+    """
+    Allows the user to create a custom test with their own question's, and answers.
+
+    The custom test which was made will then be saved onto the user's computer and the program will allow
+    the test to be accessed.
+    """
     tests = {}
 
     print("== CREATING A NEW TEST ==")
@@ -804,21 +986,26 @@ def create_tests():
 
     i = 0
     while i < num:
-        print("Question", i + 1)
+        print("Question", i + 1) # For how many question's the user inputted, it will keep asking the user
+                                 # for a question, and its answer.
         question = input("Type your question: ")
         answer = input("Type the correct answer: ")
-        questions.append(question)
-        answers.append(answer)
+        questions.append(question) #Appends the question into the list.
+        answers.append(answer)     #Appends the answer into the list.
         i += 1
 
     tests[test_name] = {"questions": questions, "answers": answers}
-    save_test(test_name, questions, answers)
+    save_test(test_name, questions, answers) # Saves the test onto the computer.
 
     print(f"The test '{test_name}' was created and saved.")
     return tests
 
 
 def run_test(tests):
+    """
+    Ask's the user to select which custom test they want to access.
+    When a test is selected, that test will run and the user is able to try to answer it.
+    """
     print("== AVAILABLE TESTS ==")
     for name in tests:
         print("-", name)
@@ -852,6 +1039,9 @@ def run_test(tests):
     print(f"Your Score Is: {score} / {total}")
 
 def test_choice():
+    """
+    Asks the user to choose which test they want to run, and when one is selected, that chosen test will run.
+    """
     premadeoptions = ["Geometry", "Polynomials", "Algebra", "Coordinate Planes",
                       "Quadratics", "Trigonometry", "Exit"]
     pre_made_test_options = promptinput("Which Pre-Made test would you like to pick?", premadeoptions)
