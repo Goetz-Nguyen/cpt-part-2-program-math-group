@@ -1621,11 +1621,29 @@ def scientific_calc():
 
 def algebra_formulas():
     class Quadratics:
-        def __init__(self, a: int, b: int, c: int):
+        """
+        A class that handles the quadratic formula
+
+        Attributes:
+            a (int): Value of a
+            b (int): Value of b
+            c (int): Value of c
+
+        Invariants:
+            - Cannot have an empty input 
+    
+        """
+        def __init__(self, a: int, b: int, c: int) -> None:
+            """
+            Initializes the values of A, B, and C
+            """
             self._a = a
             self._b = b
             self._c = c
         def quadratic(self):
+            """
+            Method for the quadratic formula
+            """
             discriminant = (self._b**2) - (4*self._a*self._c)
             if discriminant < 0:
                 print("It has 0 solutions")
@@ -1641,29 +1659,62 @@ def algebra_formulas():
                 print(sol)
 
     class Pythagorean:
-        def __init__(self, a: int, b: int, c: int):
+        """
+        A class that handles the Pythagorean Theorem
+
+        Attributes:
+            a (int): Value of a
+            b (int): Value of b
+            c (int): Value of c
+
+        Invariants:
+            - Cannot have an empty input 
+    
+        """    
+        def __init__(self, a: int, b: int, c: int) -> None:
+            """
+            Initializes the values of A, B, and C
+            """
             self._a = a
             self._b = b
             self._c = c
         def pythagorean_theorem(self):
-            try:
-                side = input("Which side to solve?: [a,b,c] ")
-                if side.lower() == "c":
-                    py_theorem = math.sqrt(self._a**2 + self._b**2)
-                    print(f"The length of C is {py_theorem:.2f}")
-                elif side.lower() == "a":
-                    py_theorem = math.sqrt(self._c**2 - self._b**2)
-                    print(f"The length of A is {py_theorem:.2f}")
-                elif side.lower() == "b":
-                    py_theorem = math.sqrt(self._c**2 - self._a**2)
-                    print(f"The length of B is {py_theorem:.2f}")
-            except:
-                print("Couldn't calculate using the numbers!")
+            """
+            Method for solving the Pythagorean Theorem
+            """
+            side = input("Which side to solve?: [a,b,c] ")
+            if side.lower() == "c":
+                py_theorem = math.sqrt(self._a**2 + self._b**2)
+                print(f"The length of C is {py_theorem:.2f}")
+            elif side.lower() == "a":
+                py_theorem = math.sqrt(self._c**2 - self._b**2)
+                print(f"The length of A is {py_theorem:.2f}")
+            elif side.lower() == "b":
+                py_theorem = math.sqrt(self._c**2 - self._a**2)
+                print(f"The length of B is {py_theorem:.2f}")
 
     class Pascals_Triangle:
+        """
+        A class that handles on printing the Pascal's Triangle
+
+        Attributes:
+            n(int): The number of rows 
+
+        Invariants:
+            - Cannot have an empty input 
+            - Cannot have a negative input
+
+        """    
+        #https://www.geeksforgeeks.org/python/python-program-to-print-pascals-triangle/
         def __init__(self, n: int):
+            """
+            Initializes the value of n
+            """
             self.n = n
         def printing_triangle(self):
+            """
+            Method for printing the Pascal's Triangle
+            """
             for i in range(self.n):
                 for j in range(self.n - i + 1):
                     print(end=" ")
@@ -1675,73 +1726,100 @@ def algebra_formulas():
                 print()
 
     class Midpoint:
+        """
+        A class that handles on solving the Midpoint of linear graph
+
+        Attributes:
+        x1 (int): The value of the first x coordinate
+        x2 (int): The value of the second x coordinate
+        y1 (int): The value of the first y coordinate
+        y2 (int): The value of the first y coordinate
+
+        Invariants:
+            - Cannot have an empty input 
+
+        """    
         def __init__(self, x1: int, x2: int, y1: int, y2: int):
+            """
+            Initializes the value of x1, x2, y1, and y2
+            """
             self._x1 = x1
             self._x2 = x2
             self._y1 = y1
             self._y2 = y2
         def midpoint(self):
+            """
+            Method for the formula of the Midpoint of a graph
+            """
             x = ((self._x1 + self._x2) / 2)
             y = ((self._y1 + self._y2) / 2)
             print(f"The midpoint is {x}, {y}")
 
     class Distance(Midpoint):
+        """
+        A class that handles on solving the Distance of two points on a graph
+
+        Attributes:
+        x1 (int): The value of the first x coordinate
+        x2 (int): The value of the second x coordinate
+        y1 (int): The value of the first y coordinate
+        y2 (int): The value of the first y coordinate
+
+        Invariants:
+            - Cannot have an empty input 
+        """    
         def __init__(self, x1, x2, y1, y2):
+            """
+            Initializes the values of x1, x2, y1, and y2 
+            """
             super().__init__(x1, x2, y1, y2)
         def distance(self):
+            """
+            Method for the forumla of the distance of two points
+            """
             d_ans = math.sqrt((self._x2 - self._x1)**2 + (self._y2 - self._y1)**2)
             print(f"The distance between these 2 points is {d_ans}")
 
-    # class Exponent_laws:
-    #     def __init__(self, base: int, m: int, n: int):
-    #         self._base = base
-    #         self._m = m
-    #         self._n = n
-    #     def 
+
             
 
     def main():
+        # Menu list
         while True:
-            algebralist = ["Quadratics", "Pythagorean", "Pascal's Triangle", "Midpoint", "Distance","Exit"]
+            algebralist = ["Quadratics", "Pythagorean", "Pascal's Triangle", "Midpoint", "Distance", "Exponent Laws","Exit"]
             menu = promptinput("Pick a formula: ", algebralist)
             match menu:
                 case "Quadratics":
-                    os.system('cls' if os.name == 'nt' else 'clear') 
                     try:
                         variables = Quadratics(int(input("Enter first number: ")), int(input("Enter second number: ")), int(input("Enter third number: ")))
                     except:
                         print("Enter a valid number.")
                     variables.quadratic()
                 case "Pythagorean":
-                    os.system('cls' if os.name == 'nt' else 'clear') 
                     try: 
                         sides = Pythagorean(int(input("Enter first number: ")), int(input("Enter second number: ")), int(input("Enter third number: ")))
                     except: 
                         print("Enter valid number.")
                     sides.pythagorean_theorem()
                 case "Pascal's Triangle":
-                    os.system('cls' if os.name == 'nt' else 'clear') 
                     try:
                         n = Pascals_Triangle(int(input("Enter the value of N: ")))
                         n.printing_triangle()
                     except:
                         print("Enter a valid value for N.")
                 case "Midpoint":
-                    os.system('cls' if os.name == 'nt' else 'clear') 
                     try:
                         m = Midpoint(int(input("Enter first x coord: ")), int(input("Enter second x coord: ")), int(input("Enter first y coord: ")), int(input("Enter second y coord: ")))
                         m.midpoint()
                     except:
                         print("Enter valid coordinates.")
                 case "Distance":
-                    os.system('cls' if os.name == 'nt' else 'clear') 
                     try:
                         d = Distance(int(input("Enter second x coord: ")), int(input("Enter first x coord: ")), int(input("Enter second y coord: ")), int(input("Enter first y coord: ")))
                         d.distance()
                     except:
                         print("Enter valid coordinates.")
                 case "Exit":
-                    os.system('cls' if os.name == 'nt' else 'clear') 
                     return
     main()
 
