@@ -1518,7 +1518,7 @@ def geometry_calc():
             print(f"The surface area of the cone is {cne_surface_area:.2f} units.")
 
 
-    def main():
+    def menu():
         while True:
             shapeslist = ["Square", "Rectangle", "Triangle", "Circle", "Cube", "Rectangular Prism",
                         "Circular Cylinder", "Cone", "Exit"]
