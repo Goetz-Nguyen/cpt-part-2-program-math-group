@@ -1,5 +1,5 @@
 import sympy, random, os, math, matplotlib.pyplot, numpy
-from sympy import sympify
+from sympy import sympify, SympifyError
 from InquirerPy import prompt
 from PyDesmos import Graph
 from matplotlib.patches import Circle, Rectangle
