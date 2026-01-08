@@ -872,18 +872,22 @@ def test_choice():
             return
     
 def graph_calculator():
+    """
+    A graphing calculator which draws a graph based on user input
+    """
     menu = promptinput("What kind of graph?",["Trig", "Polynomial", "Exit"])
     error = False
+
     while menu != "Exit":
-        os.system('cls' if os.name == 'nt' else 'clear') 
+        os.system('cls' if os.name == 'nt' else 'clear') # Clean terminal
         if menu == "Polynomial":
             menup = promptinput("How do you want to enter your graph?", ["Equation", "Enter each term"])
             if menup == "Equation":
                 with Graph('my graph') as G:
-                    f, x = G.f, G.x
+                    f, x = G.f, G.x # Setup the graph using f of x
                     try:
                         print("Use ^ to show exponents")
-                        f[x] = input("f(x) = ")
+                        f[x] = input("f(x) = ") # Set graph as the input
                     except:
                         print("Enter valid numbers!")
             else:
@@ -893,10 +897,11 @@ def graph_calculator():
                     exponent = int(input("Enter graph degree: "))
                     for i in range(exponent+1):
                         coefficient.append(int(input(f"Enter coefficient of the the term with degree {i}: ")))
+                    # Formats the coefficients to fit the proper form of the equation
                     for i in range(len(coefficient), 0, -1):
                         if i != 0:
                             equation += f"{coefficient[i-1]}*x^{i-1} + "
-                    equation = equation[:len(equation)-3]
+                    equation = equation[:len(equation)-3] # Inverts the equation
                     error = False
                 except:
                     error = True
@@ -905,7 +910,7 @@ def graph_calculator():
                     try:
                         with Graph('my graph') as G:
                                 f, x = G.f, G.x
-                                f[x] = equation
+                                f[x] = equation # Sets the formatted equation to the graph
                     except:
                         print("Couldn't graph!")
             menu = promptinput("What kind of graph?",["Trig", "Polynomial"])
@@ -1161,7 +1166,7 @@ def mental_math():
                     if k == tries-1:
                             print(f"Score: {corrects}/{tries}")
                             choice = menu()
-                            
+
 
 def simple_calculator():
     history = []
