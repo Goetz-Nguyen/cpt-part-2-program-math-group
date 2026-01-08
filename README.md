@@ -15,5 +15,5 @@
 ```
 4. Look for outputs in terminal
 
-## Contributers
+## Contributors
 Anthony Antczak, Caio Gentil Corado, Gabriel Paras and Sebastian Siatka
