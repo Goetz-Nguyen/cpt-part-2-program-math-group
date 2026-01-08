@@ -4,10 +4,10 @@
 
 ## Usage guide
 
-1. To use the code, download the file and run the code
-2. Run download the pre-requisites, run the code:
+1. To use the program, download the file and run the code
+2. To download the pre-requisites, run this code in the terminal:
 ```sh
-pip install -r requirements.txt
+> pip install -r requirements.txt
 ```
 3. How to run the code:
 ```sh
