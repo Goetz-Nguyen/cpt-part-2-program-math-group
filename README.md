@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ```
 3. How to run the code:
 ```sh
-> python MathFixMain.py
+> python main.py
 ```
 4. Look for outputs in terminal
 
