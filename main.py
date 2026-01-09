@@ -620,21 +620,50 @@ def math_definitions():
             print("Vertical Angles: Two Angles that are equal, made by two Intersecting Lines.")
 
         case "Trigonometry":
-            print("== TRIGONOMETRY VOCABULARY ==:")
-            print("Hypotenuse: Longest side of a right triangle.")
-            print("Opposite: Side across from the angle.")
-            print("Adjacent: Side next to the angle.")
-            print("Sine (sin): Opposite / Hypotenuse.")
-            print("Cosine (cos): Adjacent / Hypotenuse.")
-            print("Tangent (tan): Opposite / Adjacent.")
-            print("Amplitude: Vertical Stretch of a function.")
-            print("Angle of Depression: An Angle which is below the horizontal.")
-            print("Angle of Elevation: An Angle that is measured above the horizontal.")
-            print("Asymtotes: Lines that represent undefined values for functions.")
-            print("Cofunctions: Pairs of functions that have complimentary angles which the trigonmetric ratio's are equal.")
-            print("Cosecant: The Reciprocal of Sine.")
-            print("Cotangent: The Reciprocal of Tangent.")
-            print("Secant: The Reciprocal of Cosine.")
+            print("== TRIGONOMETRY SOURCES ==")
+
+
+            print("Khan Academy Trigonometry")
+            print("Full lessons and practice for trigonometry.")
+            print("https://www.khanacademy.org/math/trigonometry")
+            print("")
+
+
+            print("Trigonometry Math Is Fun")
+            print("Simple explanations and examples for trig.")
+            print("https://www.mathsisfun.com/algebra/trigonometry.html")
+            print("")
+
+
+            print("Intro to Trig Ratios")
+            print("Explains sine cosine and tangent.")
+            print("https://www.khanacademy.org/math/trigonometry/trigonometry-right-triangles/intro-to-the-trig-ratios/v/basic-trigonometry-ii")
+            print("")
+
+
+            print("Solve Right Triangles Using Trig")
+            print("Shows how to find missing sides and angles.")
+            print("https://www.khanacademy.org/math/trigonometry/trigonometry-right-triangles/trig-solve-for-a-side/v/example-trig-to-solve-the-sides-and-angles-of-a-right-triangle")
+            print("")
+
+
+            print("SOH CAH TOA Explained")
+            print("Teaches trig ratios using triangles.")
+            print("https://www.youtube.com/watch?v=PUB0TaZ7bhA")
+            print("")
+
+
+            print("Finding Missing Sides Using Trigonometry")
+            print("Shows step by step trig examples.")
+            print("https://www.youtube.com/watch?v=bQLEVsfVQ_o")
+            print("")
+
+
+            print("Finding Missing Angles Using Trigonometry")
+            print("Shows how to calculate angles with trig.")
+            print("https://www.youtube.com/watch?v=fMIqJzt2sCk")
+            print("")
+
 
         case "Algebra":
             print("== ALGEBRA VOCABULARY ==:")
