@@ -5,7 +5,7 @@ from PyDesmos import Graph
 from matplotlib.patches import Circle, Rectangle
 from math import factorial
 
-def promptinput(message,choices):
+def promptinput(message: str,choices: list) -> str:
     """Creates a prompt of choices
 
     Args:
@@ -24,7 +24,7 @@ def promptinput(message,choices):
     return prompt(user_input)[0] # Return chosen answer
 
 
-def geometry_test():
+def geometry_test() -> int:
     """
     Prints 10 questions, one at a time for the user, which then is asked for the input of the correct answer.
     It is mainly focused for the unit of Geometry.
@@ -121,7 +121,7 @@ def geometry_test():
     print(f"Your Score Is: {score} / {total}")
     return score
 
-def polynomials_test():
+def polynomials_test() -> int:
     """
     Prints 10 questions, one at a time for the user, which then is asked for the input of the correct answer.
     It is mainly focused for the unit of Polynomials.
@@ -232,7 +232,7 @@ def polynomials_test():
 
     return score
 
-def algebra_tests():
+def algebra_tests() -> int:
     """
     Prints 10 questions, one at a time for the user, which then is asked for the input of the correct answer.
     It is mainly focused for the unit on Algebra.
@@ -295,7 +295,7 @@ def algebra_tests():
     print(f"Your Score Is: {score} / {total}")
     return score
 
-def coordinate_planes_test():
+def coordinate_planes_test() -> int:
     """
     Prints 10 questions, one at a time for the user, which then is asked for the input of the correct answer.
     It is mainly focused for the unit on Coordinate Planes.
@@ -392,7 +392,7 @@ def coordinate_planes_test():
     print(f"Your Score Is: {score} / {total}")
     return score
 
-def trigonometry_test():
+def trigonometry_test() -> int:
     """
     Prints 10 questions, one at a time for the user, which then is asked for the input of the correct answer.
     It is mainly focused for the unit on Trigonometry.
@@ -495,7 +495,7 @@ def trigonometry_test():
     print(f"Your Score Is: {score} / {total}")
     return score
 
-def quadratics_test():
+def quadratics_test() -> int:
     """
     Prints 10 questions, one at a time for the user, which then is asked for the input of the correct answer.
     It is mainly focused for the unit on Quadratics.
@@ -966,7 +966,7 @@ def save_test(test_name, questions, answers):
     file.close()
 
 
-def load_test(filename):
+def load_test(filename) -> dict:
     """
     When the function is accessed, it will search for a file onto the user's computer for the inputted name
     that contains the user's custom questions and answers.
@@ -996,7 +996,7 @@ def load_test(filename):
     return tests
 
 
-def create_tests():
+def create_tests() -> dict:
     """
     Allows the user to create a custom test with their own question's, and answers.
 
@@ -1182,7 +1182,7 @@ def mental_math():
             (str): Type of question picked
         """
         return promptinput("What kind of math?", ["Everything","Dividing", "Multiplying", "Adding", "Subtracting", "Exit"])
-    def get_random():
+    def get_random() -> tuple[int]:
         """
         Generates a random number that is not zero, and that can be divided by each other and that are not the same.
 
@@ -1201,7 +1201,7 @@ def mental_math():
             number2 = random.randrange(2,number1)
         return number1, number2
 
-    def initialize():
+    def initialize() -> tuple[int]:
         """
         Initializes the game by asking the user how many questions they want to answer.
 
@@ -1217,7 +1217,7 @@ def mental_math():
                 print("Enter a valid number!")
         return 0, tries
 
-    def check_answer(correct, corrects):
+    def check_answer(correct: int, corrects: int) -> int:
         """
         Checks if the user answered correctly and returns the total score.
 
@@ -1233,7 +1233,7 @@ def mental_math():
             corrects = corrects + 1
         return corrects
 
-    def dividing_system():
+    def dividing_system() -> int:
         """
         Generates random multiple choice questions based on division.
 
@@ -1255,7 +1255,7 @@ def mental_math():
                 print(f"{multiple[i]}) {int(number1/number2)}")
         return correct
 
-    def multiplying_system():
+    def multiplying_system() -> int:
         """
         Generates random multiple choice questions based on multiplication.
 
@@ -1278,7 +1278,7 @@ def mental_math():
                 print(f"{multiple[i]}) {int(number1*number2)}")
         return correct
 
-    def adding_system():
+    def adding_system() -> int:
         """
         Generates random multiple choice questions based on addition.
 
@@ -1301,7 +1301,7 @@ def mental_math():
                 print(f"{multiple[i]}) {int(number1+number2)}")
         return correct
 
-    def subtract_system():
+    def subtract_system() -> int:
         """
         Generates random multiple choice questions based on subtraction.
 
