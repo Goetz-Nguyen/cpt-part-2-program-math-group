@@ -1,6 +1,7 @@
 from InquirerPy import prompt
 from Caio import mental_math, graph_calculator, shaper
 import os
+from Sebastian import create_tests, load_test, show_sources , test_choice, run_test, math_definitions
 
 def promptinput(message: str,choices: list) -> str:
     """Creates a prompt of choices
