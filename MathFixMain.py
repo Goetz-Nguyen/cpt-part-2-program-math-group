@@ -1,5 +1,6 @@
 from InquirerPy import prompt
 from Caio import mental_math, graph_calculator, shaper
+from anthony import simple_calculator, scientific_calculator
 import os
 from Sebastian import create_tests, load_test, show_sources , test_choice, run_test, math_definitions
 
@@ -75,7 +76,7 @@ def main():
                 choice = promptinput("What do you want?", menu_options)
             
             case "Scientific Calculator":
-                scientific_calc()
+                scientific_calculator()
                 choice = promptinput("What do you want?", menu_options)
 
             case "Geometry Calculator":
