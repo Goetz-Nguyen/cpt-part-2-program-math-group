@@ -14,8 +14,15 @@
 ```
 4. Look for outputs in terminal
 
+5. Interact with the terminal by using up and down keys to navigate and enter to confirm, occasionally type with keyboard to perform specific inputs.
+
 ## Contributors
 Anthony Antczak, Caio Gentil Corado, Gabriel Paras and Sebastian Siatka
+#
+#
+#
+#
+#
 ## Calculator Tutorial
 # Basic
 + addition = +
