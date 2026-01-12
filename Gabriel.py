@@ -205,10 +205,15 @@ def algebra_formulas():
                     sides.pythagorean_theorem()
                 case "Pascal's Triangle":
                     try:
-                        n = Pascals_Triangle(int(input("Enter the value of N: ")))
-                        n.printing_triangle()
+                        n = int(input("Enter the value of N: "))
+                        while n < 0:
+                            print("Cannot input any negative numbers")
+                            n = int(input("Enter the value of N: "))
+                        new_n_value = Pascals_Triangle(n)
+                        new_n_value.printing_triangle()
                     except:
-                        print("Enter a valid value for N.")
+                        print("Enter a valid input for N.")
+
                 case "Midpoint":
                     try:
                         m = Midpoint(int(input("Enter first x coord: ")), int(input("Enter second x coord: ")), int(input("Enter first y coord: ")), int(input("Enter second y coord: ")))
