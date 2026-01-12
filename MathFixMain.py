@@ -3,7 +3,7 @@ from Caio import mental_math, graph_calculator, shaper
 from anthony import simple_calculator, scientific_calculator
 import os
 from Sebastian import create_tests, load_test, show_sources , test_choice, run_test, math_definitions
-
+from main import geometry_calc, algebra_formulas
 def promptinput(message: str,choices: list) -> str:
     """Creates a prompt of choices
 
