@@ -91,7 +91,6 @@ def main():
                 shaper()
                 choice = promptinput("What do you want?", menu_options)
             
-    mental_math()
     print("Bye!")
 
 
