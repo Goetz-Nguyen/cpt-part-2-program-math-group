@@ -148,7 +148,7 @@ class Midpoint:
         self._y2 = y2
     def midpoint(self):
         """
-        Method for the formula of the Midpoint
+        Method for the formula of the Midpoint of a graph
         """
         x = ((self._x1 + self._x2) / 2)
         y = ((self._y1 + self._y2) / 2)
@@ -169,12 +169,12 @@ class Distance(Midpoint):
     """    
     def __init__(self, x1, x2, y1, y2):
         """
-        Initializes the values of x1, x2, y1, and y2 (Inherited from class Midpoint)
+        Initializes the values of x1, x2, y1, and y2 
         """
         super().__init__(x1, x2, y1, y2)
     def distance(self):
         """
-        Method for the forumla of the distance
+        Method for the forumla of the distance of two points
         """
         d_ans = math.sqrt((self._x2 - self._x1)**2 + (self._y2 - self._y1)**2)
         print(f"The distance between these 2 points is {d_ans}")
@@ -202,10 +202,15 @@ def main():
                 sides.pythagorean_theorem()
             case "Pascal's Triangle":
                 try:
-                    n = Pascals_Triangle(int(input("Enter the value of N: ")))
-                    n.printing_triangle()
+                    n = int(input("Enter the value of N: "))
+                    while n < 0:
+                        print("Cannot input any negative numbers")
+                        n = int(input("Enter the value of N: "))
+                    new_n_value = Pascals_Triangle(n)
+                    new_n_value.printing_triangle()
                 except:
-                    print("Enter a valid value for N.")
+                    print("Enter a valid input for N.")
+
             case "Midpoint":
                 try:
                     m = Midpoint(int(input("Enter first x coord: ")), int(input("Enter second x coord: ")), int(input("Enter first y coord: ")), int(input("Enter second y coord: ")))
