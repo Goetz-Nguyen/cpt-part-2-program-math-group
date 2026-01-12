@@ -3,13 +3,6 @@ from InquirerPy import prompt
 from PyDesmos import Graph
 from matplotlib.patches import Circle, Rectangle
 
-#TUTORIALS VV
-#https://www.geeksforgeeks.org/python/how-to-draw-shapes-in-matplotlib-with-python/
-#https://matplotlib.org/stable/gallery/mplot3d/index.html
-# https://pypi.org/project/PyDesmos/
-# https://devcracker.medium.com/how-to-add-a-link-or-hyperlink-in-readme-md-file-68752bb6499e
-
-
 
 def promptinput(message: str,choices: list) -> str:
     """Creates a prompt of choices
