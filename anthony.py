@@ -102,7 +102,8 @@ def simple_calculator() -> None:
                 while True:
                     try:
                         original_eq = str(input("Equation(use: '()' '+' '-' '/' '*' '**' 'sqrt()'): "))
-                        error_check = sympify(original_eq) #Uses the sympy library to check beforehand with the
+                        equation = original_eq.split() #split version works for error checking
+                        error_check = sympify(equation) #Uses the sympy library to check beforehand with the
                                                         #SympifyError library if there is incorrect syntax
 
                     except ZeroDivisionError: #Checks if devision by zero
@@ -114,6 +115,12 @@ def simple_calculator() -> None:
                     except SympifyError: #The library connected to sympy which checks for errors
                         print("")
                         print("Incorrect syntax")
+                        print("")
+                        continue
+
+                    if original_eq == "" or original_eq == " ":
+                        print("")
+                        print("Cannot be empty")
                         print("")
                         continue
                     
@@ -364,6 +371,12 @@ def scientific_calculator() -> None:
                         except SympifyError: #The library connected to sympy which checks for errors
                             print("")
                             print("Incorrect syntax")
+                            print("")
+                            continue
+
+                        if original_eq == "" or original_eq == " ":
+                            print("")
+                            print("Cannot be empty")
                             print("")
                             continue
                         
