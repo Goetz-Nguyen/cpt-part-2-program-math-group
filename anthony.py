@@ -1,7 +1,6 @@
 from InquirerPy import prompt
 from sympy import sympify, SympifyError
-import os
-import math
+import os, math, sympy
 
 def promptinput(message,choices):
     """Creates a prompt of choices
